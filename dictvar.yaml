@@ -1,0 +1,12 @@
+---
+- hosts: linux
+  vars:
+    training:
+      topic: ansible
+      trainer: satishbob
+      mode: online
+      lab: aws
+  tasks:
+  - name: print the that one
+    debug: msg=" key is {{ item.key  }} and value is {{ item.value }}"
+    with_dict: "{{ training }}"

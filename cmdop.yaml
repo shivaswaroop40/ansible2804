@@ -1,0 +1,9 @@
+---
+- hosts: linux
+  ignore_errors: yes
+  tasks:
+  - name: print command output
+    command: echo "I is ansible"
+    register: cmdoutput
+  - debug: msg="std op={{ cmdoutput.stdout }}"
+  - debug: msg="std er={{ cmdoutput.stderr }}"
